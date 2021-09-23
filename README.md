@@ -41,6 +41,8 @@ Good Luck.
 - Python 3.8.10
 
 - CUDA 10.1
+    
+It should additionally be noted that this was written on Linux (Ubuntu 20.04.3 LTS). Attempt on Windows or other operating systems at own risk.
 
 Get required Python packages:
 ```
@@ -58,16 +60,23 @@ For download instructions, follow this guide: [Downloading Data from the TCIA Da
 Download the CMMD ``manifest`` and ``clinicaldata`` file to a folder within your working directory.
 
 E.g.
-- /path/to/my/dir/dataset/manifest-1616439774456
+- /path/to/my/dir/dataset/manifest-1616439774456/
 - /path/to/my/dir/dataset/CMMD_clinicaldata_revision.xlsx
 
 
 ## Run Instructions
 
-To run the pipeline in its entirety, begin with file ``0_``and run each notebook in sequential order tll ``5_`` . 
+To run the pipeline in its entirety, begin with file ``0_`` and run each notebook in sequential order tll ``5_``. 
 
-If you only require the CMMD preprocessing and metadata handling, please run sections `0_0_Data_Exploration.ipynb`,  ``0_Data_Exploration.ipynb``, and ``1_stratification_data_split.ipynb``
-
+If you only require the CMMD preprocessing and metadata handling, please run sections `0_0_Data_Exploration.ipynb`,  ``0_Data_Exploration.ipynb``, and ``1_stratification_data_split.ipynb``.
+        
+A collated main.py has been added which allows for the pipeline to be run in it's entirety when given a path to the manifest folder and the .xlsx metadata file. For running in CLI run the following command with your relevant paths.
+```
+python3 main.py --manifest_path "/path/to/my/dir/dataset/manifest-1616439774456/" \
+    --metadata_path "/path/to/my/dir/dataset/CMMD_clinicaldata_revision.xlsx"
+```
+This will run the entire pipeline with the Xception model and fine-tuning. 
+For partial use of the program, comment out particular methods in the main, or refer to the Jupyter Notebooks.
 
 ## Classification Pipeline
 
