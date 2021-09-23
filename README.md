@@ -76,7 +76,7 @@ python3 main.py --manifest_path "/path/to/my/dir/dataset/manifest-1616439774456/
     --metadata_path "/path/to/my/dir/dataset/CMMD_clinicaldata_revision.xlsx"
 ```
 This will run the entire pipeline with the Xception model and fine-tuning. 
-For partial use of the program, comment out particular methods in the main, or refer to the Jupyter Notebooks.
+For partial use of the program, comment out particular methods in the main, or refer to the Jupyter Notebooks. Please note that the main.py script may take upward of 12 hours to run. Please ensure that there is at least 25GB of storage available to hold the dataset and run preprocessing scripts.
 
 ## Classification Pipeline
 
